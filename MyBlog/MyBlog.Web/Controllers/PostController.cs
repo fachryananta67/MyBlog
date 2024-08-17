@@ -1,7 +1,6 @@
 namespace MyBlog.Controllers;
 
 using Application.Services;
-using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 public class PostController : Controller

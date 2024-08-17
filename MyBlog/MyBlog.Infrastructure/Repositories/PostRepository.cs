@@ -1,7 +1,7 @@
 namespace MyBlog.Infrastructure.Repositories;
 
-using Domain.Entities;
 using Domain.Interfaces;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 public class PostRepository : IPostRepository

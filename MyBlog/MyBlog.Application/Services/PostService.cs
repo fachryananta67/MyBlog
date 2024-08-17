@@ -1,7 +1,7 @@
 namespace MyBlog.Application.Services;
 
-using Domain.Entities;
 using Domain.Interfaces;
+using Domain.Models;
 
 public class PostService
 {
