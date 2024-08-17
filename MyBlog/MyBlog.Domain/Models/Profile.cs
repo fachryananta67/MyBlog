@@ -15,4 +15,5 @@ public class Profile : ModelBase
   public ICollection<Experience> Experiences { get; set; }
   public ICollection<Project> Projects { get; set; }
   public ICollection<string> Skills { get; set; }
+  public ICollection<Post> Posts { get; set; }
 }

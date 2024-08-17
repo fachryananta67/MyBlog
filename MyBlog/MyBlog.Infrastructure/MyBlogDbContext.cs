@@ -47,6 +47,10 @@ public class MyBlogDbContext : DbContext
       .HasMany( p => p.Projects )
       .WithOne( p => p.Profile )
       .HasForeignKey( p => p.ProfileId );
+    modelBuilder.Entity<Profile>()
+      .HasMany( p => p.Posts )
+      .WithOne( p => p.Profile )
+      .HasForeignKey( p => p.ProfileId );
 
     Seed( modelBuilder );
   }
@@ -90,10 +94,29 @@ public class MyBlogDbContext : DbContext
       PhoneNumber = "081234567890",
       Skills = new List<string> { "C#", "ASP.NET Core", "Entity Framework Core" }
     };
+
+    var posts = new List<Post>
+    {
+      new()
+      {
+        Id = -1,
+        Title = "My First Post",
+        Content = "This is my first seed post",
+        ProfileId = -1
+      },
+      new()
+      {
+        Id = -2,
+        Title = "My Second Post",
+        Content = "This is my second seed post",
+        ProfileId = -1
+      }
+    };
     
     modelBuilder.Entity<Profile>().HasData( profile );
     modelBuilder.Entity<Experience>().HasData( experience );
     modelBuilder.Entity<Project>().HasData( project );
+    modelBuilder.Entity<Post>().HasData( posts );
   }
   
   public DbSet<Post> Posts { get; set; }
